@@ -1,0 +1,8 @@
+version: '3.7'
+services:
+  tfx:
+    build: .
+    volumes:
+      - ./notebooks:/tf/notebooks
+    ports:
+      - "8888:8888"
