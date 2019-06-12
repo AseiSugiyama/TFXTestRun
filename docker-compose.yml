@@ -1,8 +1,20 @@
 version: '3.7'
 services:
   tfx:
-    build: .
+    build:
+      context: ./dockerfiles
+      dockerfile: Dockerfile
+    image: tfxtestrun:0.13
     volumes:
       - ./notebooks:/tf/notebooks
     ports:
       - "8888:8888"
+  tfx-nightly:
+    build:
+      context: ./dockerfiles
+      dockerfile: nightly.Dockerfile
+    image: tfxtestrun:nightly
+    volumes:
+      - ./notebooks:/tf/notebooks
+    ports:
+      - "8889:8888"
