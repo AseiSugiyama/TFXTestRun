@@ -9,6 +9,7 @@ services:
       - ./notebooks:/tf/notebooks
     ports:
       - "8888:8888"
+      - "6006:6006"
   tfx-nightly:
     build:
       context: ./dockerfiles
@@ -18,3 +19,4 @@ services:
       - ./notebooks:/tf/notebooks
     ports:
       - "8889:8888"
+      - "6007:6006"
