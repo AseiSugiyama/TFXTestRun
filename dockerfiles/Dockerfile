@@ -20,7 +20,9 @@ RUN apt-get update && \
     unzip \
     git && \
     pip install tfx 'apache-airflow[gcp]' docker && \
-    mkdir notebooks
+    mkdir notebooks && \
+    jupyter nbextension install --py --symlink --sys-prefix tensorflow_model_analysis && \
+    jupyter nbextension enable --py --sys-prefix tensorflow_model_analysis
 VOLUME /notebooks
 EXPOSE 8888
 CMD ["bash", "-c", "source /etc/bash.bashrc && jupyter notebook --notebook-dir=/tf --ip 0.0.0.0 --no-browser --allow-root"]
