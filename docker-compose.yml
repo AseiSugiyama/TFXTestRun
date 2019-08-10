@@ -8,8 +8,9 @@ services:
     volumes:
       - ./notebooks:/tf/notebooks
     ports:
-      - "8888:8888"
-      - "6006:6006"
+      - "8888:8888" # Jupyter Notebook
+      - "6006:6006" # Tensorboard
+      - "8080:8080" # airflow
   tfx-nightly:
     build:
       context: ./dockerfiles
@@ -18,5 +19,6 @@ services:
     volumes:
       - ./notebooks:/tf/notebooks
     ports:
-      - "8889:8888"
-      - "6007:6006"
+      - "8889:8888" # Jupyter Notebook
+      - "6007:6006" # Tensorboard
+      - "8081:8080" # airflow

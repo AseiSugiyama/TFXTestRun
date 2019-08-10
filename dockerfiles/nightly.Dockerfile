@@ -20,7 +20,7 @@ RUN apt-get update && \
     wget \
     unzip \
     git && \
-    pip install 'apache-airflow[gcp]' docker && \
+    pip install 'apache-airflow[gcp_api]' docker && \
     git clone https://github.com/tensorflow/tfx.git && \
     pip install -e ./tfx  && \
     mkdir notebooks && \
