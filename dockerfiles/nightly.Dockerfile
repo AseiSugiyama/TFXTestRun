@@ -24,8 +24,11 @@ RUN apt-get update && \
     git clone https://github.com/tensorflow/tfx.git && \
     pip install -e ./tfx  && \
     mkdir notebooks && \
+    jupyter nbextension enable --py widgetsnbextension && \
     jupyter nbextension install --py --symlink --sys-prefix tensorflow_model_analysis && \
-    jupyter nbextension enable --py --sys-prefix tensorflow_model_analysis
+    jupyter nbextension enable --py --sys-prefix tensorflow_model_analysis && \
+    mkdir notebooks
+
 VOLUME /notebooks
 EXPOSE 8888
 CMD ["bash", "-c", "source /etc/bash.bashrc && jupyter notebook --notebook-dir=/tf --ip 0.0.0.0 --no-browser --allow-root"]

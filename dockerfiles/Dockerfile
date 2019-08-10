@@ -23,6 +23,7 @@ RUN apt-get update && \
     pip install 'apache-airflow[gcp_api]'==1.10.4 && \
     pip install docker && \
     pip install tfx==0.13.0  && \
+    jupyter nbextension enable --py widgetsnbextension && \
     jupyter nbextension install --py --symlink --sys-prefix tensorflow_model_analysis && \
     jupyter nbextension enable --py --sys-prefix tensorflow_model_analysis && \
     mkdir notebooks
